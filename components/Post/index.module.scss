@@ -1,0 +1,13 @@
+@import 'styles/variables';
+
+.base {
+  p {
+    text-align: justify;
+  }
+}
+
+.date {
+  color: $text-muted;
+  font-size: 13px;
+  margin-bottom: .5rem;
+}

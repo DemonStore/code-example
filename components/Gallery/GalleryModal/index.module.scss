@@ -1,0 +1,84 @@
+@import 'styles/variables';
+
+.base {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none!important;
+}
+
+.image {
+  transform: scale(.8);
+  transform-origin: center;
+  opacity: 0;
+  max-width: 95vw;
+  max-height: 95vh;
+  transition-property: transform, opacity;
+  transition-duration: .5s;
+
+  &__loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.spinner {
+  position: absolute;
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 40px;
+  color: rgba(white, .5);
+  cursor: pointer;
+  padding: 0 17px;
+  user-select: none;
+  text-shadow: 0 0 5px rgba(black, .8);
+
+  &:hover {
+    background-color: rgba(#000, .5);
+    color: rgba(white, .8);
+  }
+}
+
+.descriptionContainer {
+  position: absolute;
+  bottom: 2.5vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  animation-duration: .5s;
+  animation-name: slideIn;
+}
+
+.description {
+  max-width: 95vw;
+  width: auto;
+  background-color: rgba(#000, .5);
+  padding: .5rem;
+  border-radius: $border-radius;
+  font-size: .875rem;
+  color: rgba(#fff, .8);
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
